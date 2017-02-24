@@ -709,7 +709,7 @@ input[type="url"] {
   padding: 5px;
   border-radius: 0;
   border: 1px solid #cacaca;
-  display: block;
+  display: inline-block;
   margin-right: 0;
   text-decoration: none;
   color: #000000;
@@ -4145,6 +4145,15 @@ body.path-submit-score h1 {
   text-align: center;
 }
 
+body.path-submit-score .field-name-body p {
+  text-align: center;
+}
+
+body.path-submit-score .field-name-body a {
+  display: inline-block;
+  margin-right: 20px;
+}
+
 body.path-challenges h1 {
   text-align: center;
   text-transform: uppercase;
@@ -4157,7 +4166,6 @@ body.path-challenges .field-name-body {
 
 body.path-eu4-challenges h1 {
   text-align: center;
-  text-transform: uppercase;
   color: #464a52;
 }
 

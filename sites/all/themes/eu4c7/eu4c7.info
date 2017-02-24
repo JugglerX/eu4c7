@@ -1,5 +1,5 @@
-name = featurebuilder2016
-description = Feature Builder 2016
+name = eu4c7
+description = EU4 Challenges
 package = Core
 version = VERSION
 core = 7.x
