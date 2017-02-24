@@ -1,0 +1,25 @@
+.alert-box ul,
+.alert-box p {
+  margin-bottom: 0
+}
+.alert-box.alert {
+  background-image: url(../images/standard/x.png);
+  background-repeat: no-repeat;
+  background-color: #ffe3e5;
+  border-color: #ffe3e5;
+  color: #ff6a52;
+  font-size: 1em;
+  text-decoration: none;
+  line-height: 1.5em;
+  font-weight: normal;
+  word-spacing: normal;
+  margin: 20px;
+  padding-top: 25px;
+  padding: 20px 50px;
+  width: 95%;
+  word-wrap: break-word;
+  @media (max-width: $mobile) {
+    width: 90%;
+  }
+
+}

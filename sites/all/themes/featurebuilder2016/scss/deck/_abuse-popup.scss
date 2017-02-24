@@ -1,0 +1,44 @@
+.abuse-popup-button-submit,
+.abuse-popup-button-cancel {
+  display: inline-block;
+  height: 30px;
+  line-height: 12px;
+  text-decoration: none;
+  color: #ffffff;
+  background: #e3e3e3 url(../images/standard/btn_normal_greyAlt.png) 0 0 repeat-x;
+  border: 1px solid #acacac;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 0 9px 3px;
+  position: relative;
+  z-index: 9999;
+  color: black;
+  &:hover, &.active {
+    background: #e3e3e3;
+  }
+  -o-transition: .1s;
+  -ms-transition: .1s;
+  -moz-transition: .1s;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+.abuse-popup-button-submit,
+.abuse-popup-button-cancel {
+  font-size: 1em;
+  bottom: -12px;
+}
+.abuse-popup-button {
+  font-size: 1em !important;
+}
+select.abuse-popup-select {
+  -moz-appearance: menulist;
+  -webkit-appearance: menulist;
+  appearance: menulist;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border: 1px solid #acacac;
+  font-family: $font-family-sans-serif;
+  font-size: 13px;
+  height: auto;
+  padding: 2px 0;
+}

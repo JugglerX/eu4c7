@@ -1,0 +1,190 @@
+html.modal-open, html.modal-open body {
+  overflow: hidden;
+}
+.reveal-modal-bg {
+  position: fixed;
+}
+.reveal-modal {
+  visibility: hidden;
+  display: none;
+  z-index: 1005;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  padding: 0;
+  border: none;
+  border-radius: 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  position: fixed;
+  @media #{$small-only} {
+    top: 0vh !important;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
+  }
+  @media #{$small-medium-only} {
+    top: 5vh !important;
+    width: 90vw;
+  }
+  @media #{$medium-up} {
+    top: 5vh !important;
+    max-width: 1000px;
+  }
+  @media #{$large-up} {
+    top: 5vh !important;
+  }
+  .reveal-modal__body {
+    clear: both;
+    padding: 40px;
+    background-image: url("../images/standard/profile-pattern.png");
+    background-color: #ffffff;
+    background-position: top right;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    max-height: 80vh;
+    overflow: auto;
+    &.reveal-modal__body--iframe {
+      overflow: hidden;
+      height: 600px;
+    }
+    @media #{$small-only} {
+      max-height: 100vh !important;
+      height: 90vh !important;
+    }
+    iframe {
+      overflow: auto;
+      height: 100%;
+      width: 100%;
+    }
+    html.ios & {
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      iframe {
+        overflow: hidden;
+        height: 1000px;
+        width: 100% !important;
+      }
+    }
+  }
+  &.reveal-modal--no-padding {
+    padding: 0;
+    .reveal-modal__body {
+      padding: 0;
+    }
+  }
+  &.reveal-modal--no-border {
+    border: none;
+  }
+  .reveal-modal__header {
+    background-color: #ffffff;
+    height: 10vh;
+    border-bottom: 1px solid #cccccc;
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+  .reveal-modal__logo {
+    width: 177px;
+    height: 80%;
+    background: url("../images/standard/logo-mobile.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    float: left;
+    margin-left: 25px;
+    @media #{$small-only} {
+      width: 120px;
+      height: 60%;
+      background-position: left;
+    }
+  }
+  .reveal-modal__title {
+    margin-top: 6px;
+    font-size: 25px;
+    line-height: 30px;
+    font-style: normal;
+    float: left;
+    margin-left: 20px;
+
+    @media #{$small-only} {
+      margin-top: 3px;
+      font-size: 20px;
+      line-height: 26px;
+      margin-left: 14px;
+    }
+  }
+  .reveal-modal__close--black {
+    position: absolute;
+    top: 50%;
+    margin-top: -9px;
+    right: 20px;
+    width: 18px;
+    height: 18px;
+    display: block;
+    text-indent: -9999px;
+    background: url($icon-close);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  .reveal-modal__close--white {
+    top: 3%;
+    right: 20px;
+    width: 18px;
+    height: 18px;
+    display: block;
+    text-indent: -9999px;
+    background: url("../images/standard/modal-white-close-button-x.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+}
+.reveal-modal {
+  &.reveal-modal--blue {
+    .reveal-modal__header {
+      background: $primary-color;
+      height: 30px;
+      .close-reveal-modal {
+        font-size: 14px;
+        line-height: 1;
+        top: 5px;
+        right: 5px;
+      }
+    }
+    .reveal-modal__body {
+      max-height: calc(90vh - 30px);
+      @media #{$small-only} {
+        max-height: 100vh !important;
+        height: calc(100vh - 30px) !important;
+      }
+    }
+    .close-reveal-modal {
+      @extend .reveal-modal__close--white;
+    }
+  }
+}
+#gpsModalWrapper {
+  html.ios & {
+    iframe {
+      @media #{$small-only} {
+        height: 885px;
+      }
+      @media #{$small-medium-only} {
+        height: 883px;
+      }
+      @media #{$medium-up} {
+        height: 883px;
+      }
+      @media #{$large-up} {
+        height: 883px;
+      }
+    }
+  }
+}
+html.safari .reveal-modal__title {
+  margin-top: 0;
+  padding-top: 3vh;
+}

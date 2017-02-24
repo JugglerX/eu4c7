@@ -1,0 +1,15 @@
+select {
+  line-height: $base-line-height;
+  font-weight: 200;
+  font-size: $base-font-size;
+  font-family: $base-font;
+  border: 1px solid #cacaca;
+  cursor: pointer;
+  padding: 8px;
+}
+
+select::-ms-expand {
+  // Hide the dropdown arrow shown in newer IE versions
+  display: none;
+}
+

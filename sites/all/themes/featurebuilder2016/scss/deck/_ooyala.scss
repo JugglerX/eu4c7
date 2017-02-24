@@ -1,0 +1,11 @@
+// AKNSITE-443 and AKNSITE-892 Ooyala video getting right-hand side cut off;
+// Make sure it fits into our template.
+.caas-content-result .caas_cp .body div[id^=d] {
+  width: 100% !important;
+  // fixes video overlapping the fixed header
+  z-index: 0;
+  position: relative;
+  @media (max-width: $mobile) {
+    height: 200px !important;
+  }
+}

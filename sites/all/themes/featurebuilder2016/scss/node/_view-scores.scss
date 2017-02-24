@@ -1,0 +1,42 @@
+.view-scores,
+.view-my-scores,
+.view-high-scores {
+	.view-content {
+		table.views-table {
+			border: 2px solid #CCC;
+			width: 100%;
+			border-width: 3px;
+			border-color: rgb(212,175,55);
+			border-style: double;
+			background-repeat: repeat;
+			background-image: url("../images/concrete_wall.jpg");
+			@include table;
+			border-radius: 5px;
+			.ds-inner-two {
+				@include clearfix();
+			}
+			thead {
+				background-color: $steel;
+				font-weight: 400px;
+				font-family: $base-font;
+				-webkit-font-smoothing: antialiased;
+				color: #fff;
+			}
+			tbody {
+
+			}
+			
+		}
+	}
+	.views-row {
+		border-bottom: 1px solid #CCC;
+		padding: 10px;
+	}
+	.views-row-even {
+		background: #EAEAEA;
+	}
+	.views-row-first {
+ 
+	}
+}
+

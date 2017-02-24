@@ -1,0 +1,32 @@
+i {
+
+  &.profile-icon {
+    width: rem-calc(40);
+    height: rem-calc(40);
+    display: block;
+    float: left;
+    background-size: contain;
+
+    &.blog {
+      background-image: url('../images/standard/profile-icon-blog.png');
+    }
+
+    &.linkedin {
+      background-image: url('../images/standard/profile-icon-linkedin.png');
+    }
+
+    &.website {
+      background-image: url('../images/standard/profile-icon-personal-website.png');
+    }
+
+    &.no-image {
+      width: rem-calc(120);
+      height: rem-calc(120);
+      border-radius: 50%;
+      float: none;
+      margin: 0 auto;
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.23);
+      background-color: #e7e7e7;
+    }
+  }
+}

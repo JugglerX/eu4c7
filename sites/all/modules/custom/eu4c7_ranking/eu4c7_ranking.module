@@ -1,0 +1,162 @@
+<?php
+
+/**
+ * @file
+ * Short file description here.
+ *
+ * Long description here.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+// function custom_module_menu() {
+
+//   $items['example'] = array(
+//     'title' => 'Example Page',
+//     'page callback' => 'custom_module_page',
+//     'access arguments' => array('access content'),
+//     'type' => MENU_NORMAL_ITEM,
+//   );
+
+//   return $items;
+// }
+
+/**
+ * Implements hook_help().
+ */
+// function custom_module_help($path, $arg) {
+
+//   switch ($path) {
+//     case 'admin/help#custom_module':
+
+//       // Return a line-break version of the README.
+//       $readme = file_get_contents(drupal_get_path('module', 'custom_module') . '/README.txt');
+//       return nl2br($readme);
+//   }
+// }
+
+/**
+ * Page example callback, referenced in hook_menu().
+ *
+ * Description of what the page displays.
+ * Second line of the description.
+ *
+ * @return string
+ *   The content of the page.
+ */
+// function custom_module_page() {
+
+//   return 'example';
+// }
+
+/**
+ * Implements hook_page_build().
+ *
+ * Add JavaScript and CSS code to every page.
+ */
+// function custom_module_page_build() {
+
+//   drupal_add_js(drupal_get_path('module', 'custom_module') . '/js/custom_module.js');
+//   drupal_add_css(drupal_get_path('module', 'custom_module') . '/css/custom_module.css');
+
+// }
+
+
+function eu4c7_ranking_node_presave($node) {
+  if($node->type == 'score') {
+    // Calculate Score
+    // Tall Empire
+    if ($node->field_score_tag['und'][0]['tid'] == 9) {
+      $score = eu47_ranking_calculate_score_tall_empire($node);
+    }
+    // Highest Income
+    if ($node->field_score_tag['und'][0]['tid'] == 3) {
+      $score = eu47_ranking_calculate_score_highest_income($node);
+    }
+    $node->field_score['und'][0]['value'] = $score;
+  }
+}
+
+//function eu4c7_ranking_node_update($node) {
+//  if($node->type == 'score') {
+//    eu4c7_ranking_assign_new_rankings();
+//  }
+//}
+//
+//function eu4c7_ranking_assign_new_rankings() {
+//  $query = new EntityFieldQuery();
+//
+//  $query->entityCondition('entity_type', 'node')
+//    ->entityCondition('bundle', 'score')
+//    ->propertyCondition('status', 1);
+//
+//  $result = $query->execute();
+//
+//  $node_scores = array();
+//
+//  if (!empty($result['node'])) {
+//    $nids = array_keys($result['node']);
+//    foreach ($nids as $nid) {
+//      $node = node_load($nid, NULL, TRUE);
+//      $node_score  = floatval($node->field_score['und'][0]['value']);
+//      $node_scores[$nid] = $node_score;
+//    }
+//  }
+//
+//  arsort($node_scores);
+//
+//  $counter = 0;
+//
+//  foreach ($node_scores as $key => $value) {
+//    $counter ++;
+//    $nid = $key;
+//    $node = node_load($nid, NULL, TRUE);
+//    $node->field_rank['und'][0]['value'] = $counter;
+//    field_attach_update('node', $node);
+//  }
+//
+//  return;
+//}
+
+function eu47_ranking_calculate_score_highest_income($node) {
+  $income = (
+    $node->field_income_taxation['und'][0]['value'] +
+    $node->field_income_production['und'][0]['value'] +
+    $node->field_income_trade['und'][0]['value'] +
+    $node->field_income_gold['und'][0]['value'] +
+    $node->field_income_tariffs['und'][0]['value'] +
+    $node->field_income_vassals['und'][0]['value'] +
+    $node->field_income_harbour_fees['und'][0]['value'] +
+    $node->field_income_subsidies['und'][0]['value'] +
+    $node->field_income_war_reparations['und'][0]['value']
+  );
+
+  $expenses = (
+    $node->field_expense_interest['und'][0]['value'] +
+    $node->field_expense_state_maintenance['und'][0]['value'] +
+    $node->field_expense_fleet_maintenance['und'][0]['value']
+  );
+
+  $profit = $income - $expenses;
+
+  return $profit;
+}
+
+
+function eu47_ranking_calculate_score_tall_empire($node) {
+  $development = $node->field_total_development['und'][0]['value'];
+
+  $income = $node->field_economy_balance['und'][0]['value'] * 3;
+
+  $tech = $node->field_total_tech['und'][0]['value'] * 6;
+
+  $unity = (
+    $node->field_cultural_unity['und'][0]['value'] +
+    $node->field_religious_unity['und'][0]['value']
+  ) / 100;
+
+  $score = ($development + $income + $tech) * ($unity);
+
+  return $score;
+}

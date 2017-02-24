@@ -1,0 +1,15 @@
+.mobile-content {
+  display: none;
+}
+
+@media #{$small-only}{
+  .mobile-content {
+    display: block;
+    select {
+      width: 100%;
+    }
+  }
+  .block.collapsible .block-content {
+    display: none;
+  }
+}

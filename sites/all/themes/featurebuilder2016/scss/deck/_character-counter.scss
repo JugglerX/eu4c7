@@ -1,0 +1,15 @@
+.character-counter {
+  @include clearfix;
+  clear: both;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 16px;
+  .count {
+    margin-top: -10px;
+    float: right;
+    .remaining-counter {
+    }
+    .total-counter {
+    }
+  }
+}

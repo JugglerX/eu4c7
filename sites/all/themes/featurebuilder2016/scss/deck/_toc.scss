@@ -1,0 +1,391 @@
+.toc {
+  margin-bottom: 20px;
+  overflow: hidden;
+  ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: block;
+  }
+  li {
+    position: relative;
+  }
+  a {
+    color: #444444;
+    text-decoration: none;
+    line-height: 20px;
+    padding: 10px 20px 10px 10px;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &__header {
+    @include clearfix;
+    background: #e5e5e5;
+    color: #ffffff;
+    padding: 10px;
+    padding-left: 46px;
+    vertical-align: middle;
+    background-position: 15px 15px;
+    background-repeat: no-repeat;
+    min-height: 50px;
+    cursor: pointer;
+    position: relative;
+    .toc--rendered & {
+      background-image: url("../images/standard/toc_icon_tree.png");
+      background-color: #656565;
+      &:before {
+        background-image: url("../images/standard/toc_icon_arrow.png");
+        height: 12px;
+        width: 17px;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 15px;
+        top: 18px;
+        @media #{$small-only} {
+          background-image: url("../images/standard/toc_icon_minus.png");
+          height: 1px;
+          width: 12px;
+          right: 15px;
+          top: 23px;
+        }
+      }
+    }
+    .toc--collapsed & {
+      width: 50px;
+      padding-left: 0;
+      @media #{$small-medium-up} {
+        background-color: $primary-color;
+        &:before {
+          display: none;
+        }
+      }
+      @media #{$small-only} {
+        padding-left: 46px;
+        width: 100%;
+        &:before {
+          background-image: url("../images/standard/toc_icon_plus.png");
+          height: 12px;
+          width: 12px;
+          right: 15px;
+          top: 18px;
+        }
+      }
+    }
+    .toc--loading & {
+      @media #{$small-only} {
+        &:before {
+          background-image: none;
+        }
+      }
+    }
+
+  }
+
+  &__title {
+    display: none;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    padding-right: 40px;
+    .toc--rendered & {
+      display: block;
+    }
+    .toc--collapsed & {
+      display: none;
+      @media #{$small-only} {
+        display: block;
+      }
+    }
+    .toc--loading & {
+      @media #{$small-only} {
+        display: none;
+      }
+    }
+  }
+
+  &__body {
+    background-color: #f8f8f8;
+    display: block;
+    @media #{$small-medium-up} {
+      .toc--collapsed & {
+        border: none;
+      }
+    }
+    .toc--rendered & {
+      border: 1px solid #eeeeee;
+    }
+    .toc--loading & {
+      .toc__loader {
+        display: block;
+      }
+    }
+    .toc__loader {
+      display: none;
+      text-align: center;
+      @media #{$small-medium-up} {
+        padding-top: 50px;
+      }
+      @media #{$small-only} {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  &__desktop {
+    transform: translateY(0);
+    display: block;
+    min-height: 400px;
+    @media #{$small-only} {
+      display: none;
+    }
+    .toc--collapsed & {
+      display: none;
+    }
+    .toc--rendered & {
+      min-height: 50px;
+    }
+  }
+
+  &__mobile {
+    @media #{$small-medium-up} {
+      display: none;
+    }
+    .toc--rendered & {
+      min-height: 24px;
+      padding: 10px;
+    }
+  }
+
+  &__footer {
+    padding: 15px;
+    border: 1px solid #eeeeee;
+    border-top: none;
+    @media #{$small-only} {
+      display: none;
+    }
+    span {
+      color: #666666;
+      font-weight: 200;
+      line-height: 30px;
+      font-size: 15px;
+    }
+    .toc--loading & {
+      display: none;
+    }
+    .toc--collapsed & {
+      display: none;
+    }
+  }
+  &__item {
+  }
+  &__item--parent {
+    background: #eaeaea;
+    font-size: 16px;
+    font-weight: 200;
+    color: #333333;
+  }
+  &__item--sibling {
+    background: #f8f8f8;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 16px;
+    font-weight: 200;
+    color: #444444;
+  }
+  &__item--child {
+    background: #ffffff;
+    font-size: 15px;
+    font-weight: 200;
+    color: #666666;
+  }
+  &__level {
+  }
+  &__level--parent {
+    background: #eaeaea;
+  }
+  &__level--sibling {
+    background: #f8f8f8;
+  }
+  &__level--child {
+    background: #ffffff;
+    border-bottom: none;
+  }
+  &__link--active {
+    border-right: $primary-color 4px solid;
+    font-weight: 700;
+  }
+  &__placeholder {
+    display: block;
+    color: #adadad;
+    text-decoration: none;
+    line-height: 20px;
+    padding: 10px 20px 10px 10px;
+    cursor: not-allowed;
+    &:hover {
+      text-decoration: none;
+    }
+    &:focus {
+      text-decoration: none;
+    }
+  }
+  &__placeholder--parent {
+    background: #ffffff;
+    border-bottom: none;
+  }
+  &__placeholder--sibling {
+    background: #f8f8f8;
+  }
+  &__placeholder--child {
+    background: #ffffff;
+    border-bottom: none;
+  }
+  &__show-all, &__show-less {
+    font-size: 15px;
+    display: block;
+    padding: 5px 10px;
+    text-align: right;
+    cursor: pointer;
+    color: $primary-color;
+    &:hover {
+      text-decoration: underline;
+    }
+    @media #{$small-only} {
+      display: none;
+    }
+  }
+  &__toggle {
+    @include label($radius: 10px);
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    z-index: 3;
+    right: 10px;
+    top: 11px;
+    font-size: 12px;
+    line-height: 12px;
+    display: none;
+    color: #666666;
+    background: #ffffff;
+    .toc--show-count & {
+      @media #{$small-only} {
+        display: block;
+      }
+    }
+  }
+  &__dotdotdot {
+    text-align: center;
+    @media #{$small-only} {
+      margin-bottom: 10px;
+      line-height: 1px;
+    }
+    span {
+      @media #{$small-only} {
+        background: #ffffff;
+        padding: 0px 15px 6px 15px;
+        line-height: 10px;
+        border: 1px solid #cacaca;
+        display: inline-block;
+      }
+    }
+    .toc--collapsed & {
+      display: none;
+    }
+  }
+  &__select {
+    margin-bottom: 10px;
+    &.toc__select--active {
+      background-color: $primary-color;
+      color: #ffffff;
+    }
+  }
+
+  &__selectbox {
+    display: block;
+    background-image: url("../images/standard/toc_line.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    @media #{$small-medium-up} {
+      display: none;
+    }
+    .toc--collapsed & {
+      display: none;
+    }
+    .toc__select:last-of-type {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__breadcrumb {
+    display: none;
+    @media #{$small-medium-up} {
+      display: none;
+    }
+    .toc--collapsed & {
+      display: block;
+    }
+    span {
+      display: inline-block;
+      margin-right: 5px;
+    }
+    a {
+      display: inline-block;
+      margin-right: 5px;
+      padding: 0;
+      color: $primary-color;
+    }
+    .toc__breadcrumb-link {
+      color: $primary-color;
+    }
+    .toc__breadcrumb--active {
+      font-weight: 700;
+    }
+    .toc__breadcrumb-item {
+
+    }
+  }
+
+  &__error {
+    padding: 20px;
+    text-align: center;
+    p {
+      margin: 0;
+    }
+    em {
+      font-size: 11px;
+    }
+    .toc--collapsed & {
+      display: none;
+    }
+  }
+  $level: '';
+  @for $i from 1 through 3 {
+    $level: $level + 'ul > li > ';
+    #{$level} a {
+      margin-left: $i * 10px
+    }
+  }
+  $level: '';
+  @for $i from 1 through 3 {
+    $level: $level + 'ul > li > ';
+    #{$level} span {
+      margin-left: $i * 10px
+    }
+  }
+  .hide {
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+
+  a.button {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+select {
+  background-repeat: no-repeat;
+  display: block;
+  color: #000000;
+  line-height: 20px;
+  font-weight: 200;
+  font-size: 16px;
+  font-family: $font-family-sans-serif;
+  border: 1px solid #cacaca;
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  left: 0;
+  background-color: #ffffff;
+  background-image: url($icon-select-arrow);
+  background-position: right;
+  border-radius: 0px;
+  padding: 8px;
+  padding-right: 55px;
+  height: 40px;
+  max-width: 368px;
+  &:hover {
+    background-color: #EAEAEA;
+    border-color: #CCCCCC;
+  }
+  &:disabled {
+    background-color: #EAEAEA;
+    border-color: #CCCCCC;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+select::-ms-expand {
+  // Hide the dropdown arrow shown in newer IE versions
+  display: none;
+}
+
+// Make select elements 100% width by default
+//select {
+//  width: 100%;
+//}
+
+//select::selection, select:focus::-ms-value,
+//select option::selection, select option:focus::-ms-value {
+//  background-color: transparent;
+//  color: #444444;
+//}
+//@media (max-width: $mobile) {
+//  form select {
+//    max-width: 99.5%;
+//  }
+//}

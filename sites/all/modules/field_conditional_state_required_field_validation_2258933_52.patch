@@ -1,0 +1,84 @@
+diff --git a/field_conditional_state.module b/field_conditional_state.module
+index 72f8b14..17e5256 100644
+--- a/field_conditional_state.module
++++ b/field_conditional_state.module
+@@ -1039,36 +1039,54 @@ function field_conditional_state_fields_list() {
+  *   Array of form state elements.
+  */
+ function _field_conditional_state_validate($form, &$form_state) {
+-  foreach ($form_state['field'] as $key => $field_data) {
+-    // Checking for field collection items.
+-    if ( $key == '#parents' ){
+-      foreach ($field_data as $field_items) {
+-        foreach ($field_items['und'][0]['#fields'] as $field) {
+-          $field_instance = $field[LANGUAGE_NONE]['instance'];
+-          $field_conditional = _field_conditional_state_get_conditional_states($field_instance['entity_type'], $field_instance['bundle'], $field_instance['field_name']);
+-          // Checking fields are conditional field or not.
+-          if (!empty($field_conditional)){
+-            foreach ($field_conditional as $conditional) {
+-              // Checking conditional field state is required or not. If required
+-              // then set the required form validation.
+-              if ($conditional['state'] == 'required' && empty($form[$conditional['field_name']][LANGUAGE_NONE][0]['#value']) && !empty($form[$conditional['states'][0]['control_field']][LANGUAGE_NONE]['#value'])) {
+-                form_set_error($field_instance['label'], t('@name field is required.', array('@name' => $field_instance['label'])));
++  if(array_key_exists('field', $form_state)){
++    foreach ($form_state['field'] as $key => $field_data) {
++      // Checking for field collection items.
++      if ( $key == '#parents' ) {
++        foreach ($field_data as $field_items) {
++          foreach ($field_items[LANGUAGE_NONE][0]['#fields'] as $field) {
++            $field_instance = $field[LANGUAGE_NONE]['instance'];
++            $field_conditional = _field_conditional_state_get_conditional_states($field_instance['entity_type'], $field_instance['bundle'], $field_instance['field_name']);
++            // Checking fields are conditional field or not.
++            if (!empty($field_conditional)){
++              foreach ($field_conditional as $conditional) {
++                // Checking conditional field state is required or not. If required
++                // then set the required form validation.
++                if ($conditional['state'] == 'required' && empty($form[$conditional['field_name']][LANGUAGE_NONE][0]['#value']) && !empty($form[$conditional['states'][0]['control_field']][LANGUAGE_NONE]['#value'])) {
++                  form_set_error($field_instance['field_name'], t('@name field is required.', array('@name' => $field_instance['label'])));
++                }
+               }
+             }
+           }
+         }
+       }
+-    }
+-    else {
+-      $field_instance = $field_data[LANGUAGE_NONE]['instance'];
+-      $field_conditional = _field_conditional_state_get_conditional_states($field_instance['entity_type'], $field_instance['bundle'], $field_instance['field_name']);
+-      // Checking fields are conditional field or not.
+-      if (!empty($field_conditional)){
+-        foreach ($field_conditional as $conditional) {
+-          // Checking conditional field state is required or not. If required
+-          // then set the required form validation.
+-          if ($conditional['state'] == 'required' && empty($form[$conditional['field_name']][LANGUAGE_NONE][0]['#value']) && !empty($form[$conditional['states'][0]['control_field']][LANGUAGE_NONE]['#value'])) {
+-            form_set_error($field_instance['label'], t('@name field is required.', array('@name' => $field_instance['label'])));
++      else {
++        $field_instance = $field_data[LANGUAGE_NONE]['instance'];
++        $field_conditional = _field_conditional_state_get_conditional_states($field_instance['entity_type'], $field_instance['bundle'], $field_instance['field_name']);
++        // Checking fields are conditional field or not.
++        if (!empty($field_conditional)) {
++          foreach ($field_conditional as $conditional) {
++            // Field value array strcuture is different depending on the field type. So checking the empty field value based on 
++            // field type.
++            switch ($field_instance['widget']['type']) {
++              case 'image_image':
++                $empty_check_field = $form[$conditional['field_name']][LANGUAGE_NONE][0]['#value']['fid'];
++                break;
++
++              case 'options_select':
++                $form_field = $form[$conditional['field_name']][LANGUAGE_NONE];
++                $empty_check_field = $form_field['#value'] !== '_none';
++                break;
++
++              default:
++                $empty_check_field = $form[$conditional['field_name']][LANGUAGE_NONE][0]['value']['#value'];
++                break;
++            }
++            // Checking conditional field state is required or not. If required
++            // then set the required form validation.
++            if ($conditional['state'] == 'required' && empty($empty_check_field) && !empty($form[$conditional['states'][0]['control_field']][LANGUAGE_NONE]['#value'])) {
++              form_set_error($field_instance['field_name'], t('@name field is required.', array('@name' => $field_instance['label'])));
++            }
+           }
+         }
+       }

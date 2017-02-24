@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Install and uninstall code for Custom Module.
+ *
+ * Long description here.
+ */
+
+
+/**
+ * Implements hook_install().
+ */
+function eu4c7_ranking_install() {
+
+  // Do some things on install, like setting the module weight.
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function eu4c7_ranking_uninstall() {
+
+  // Do some things on uninstall, like deleting all variables.
+}

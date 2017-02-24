@@ -1,0 +1,236 @@
+.toolbar {
+  line-height: 23px;
+  font-size: 12px;
+  color: #666666;
+  position: relative;
+  .embed-show, .share-show, .flag-show, .thumbs, .addto-show {
+    color: #888888;
+    display: inline-block;
+    &::after {
+      display: inline-block;
+      position: relative;
+      margin-left: 5px;
+      content: " ";
+      background: url(/sites/all/themes/autodesk_foundation5/images/standard/toolbar_icons_sprite.png) no-repeat;
+      overflow: hidden;
+      text-indent: -9999px;
+      text-align: left;
+      display: inline-block;
+    }
+    &:hover {
+      color: #000000;
+      text-decoration: none;
+    }
+    &:focus {
+      text-decoration: none;
+    }
+    &.triggered, &.has-rating {
+      color: #2581bc;
+    }
+    &.disabled {
+      color: #dddddd;
+    }
+    @media #{$small-only} {
+      span:not(#thumbs-total) {
+        display: none;
+      }
+    }
+  }
+
+  &__reactions {
+    display: inline-block;
+    position: relative;
+    #reactions {
+      display: none; // If anything but display: none; is applied to this div it will break the like button (but it won't look broken)
+      margin-top: 0px;
+      margin-right: 15px;
+    }
+    .thumbs {
+      cursor: pointer;
+      &::after {
+        margin-left: 3px;
+        background-position: -0px -0px;
+        width: 17px;
+        height: 19px;
+        top: 4px;
+      }
+      &:hover::after {
+        background-position: -17px -0px;
+      }
+      &.has-rating::after {
+        background-position: -34px -0px;;
+      }
+      &.disabled::after {
+        background-position: -51px -0px;
+      }
+
+    }
+    #thumbs-total-text {
+      display: inline-block;
+    }
+    .small-button {
+      width: 100%;
+      height: 25px;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      text-indent: -9999px;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      z-index: 100;
+    }
+  }
+  &__share {
+    margin-right: 15px;
+    display: inline-block;
+    position: relative;
+    @media #{$small-only} {
+      position: static;
+    }
+    .share-show {
+      &::after {
+        background-position: -0px -19px;
+        width: 14px;
+        height: 20px;
+        top: 5px;
+      }
+      &:hover::after {
+        background-position: -14px -19px;
+      }
+      &.triggered::after {
+        background-position: -28px -19px;
+      }
+      &.disabled::after {
+        background-position: -42px -19px;
+      }
+    }
+    .share-content {
+      position: absolute;
+      width: 290px;
+      max-width: 290px;
+      background-color: #ffffff;
+      z-index: 9999;
+      border: 1px solid #cccccc;
+      box-shadow: 0 0 50px 5px #cccccc;
+      padding: 20px 20px 5px 20px;
+      top: 35px;
+      @media #{$small-only} {
+        width: 100%;
+        left: 0px;
+      }
+    }
+  }
+
+  &__flag {
+    margin-right: 15px;
+    display: inline-block;
+    position: relative;
+    @media #{$small-only} {
+      position: static;
+    }
+    .flag-show {
+      &::after {
+        background-position: -0px -39px;
+        width: 12px;
+        height: 16px;
+        top: 3px;
+      }
+      &:hover::after {
+        background-position: -12px -39px;
+      }
+      &.triggered::after {
+        background-position: -24px -39px;
+      }
+      &.disabled::after {
+        background-position: -36px -39px;
+      }
+    }
+    .flag-content {
+      position: absolute;
+      min-width: 220px;
+      background-color: #ffffff;
+      z-index: 9999;
+      border: 1px solid #cccccc;
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.23);
+      padding: 20px 20px 5px 20px;
+      top: 25px;
+      white-space: nowrap;
+      .flag-buttonbar {
+        display: flex;
+        justify-content: space-between;
+      }
+      .flag-comments{
+        width:100%;
+        resize:none;
+        margin-bottom:0px;
+        white-space:normal;
+      }
+      #flag-report {
+        min-width: 80px;
+        text-align: center;
+      }
+      #flag-cancel {
+        min-width: 80px;
+        margin-right: 20px;
+        text-align: center;
+      }
+      @media #{$small-only} {
+        left: 0px;
+        min-width: 300px;
+
+        #flag-report {
+          min-width: 120px;
+        }
+        #flag-cancel {
+          min-width: 120px;
+        }
+      }
+    }
+  }
+  &__embed {
+    margin-right: 15px;
+    display: inline-block;
+    position: relative;
+    .embed-show {
+      &::after {
+        background-position: -0px -66px;
+        width: 23px;
+        height: 14px;
+        top: 2px;
+      }
+      &:hover::after, &:hover::after {
+        background-position: -23px -66px;
+      }
+      &.triggered::after {
+        background-position: -46px -66px;
+      }
+      &.disabled::after {
+        background-position: -69px -66px;
+      }
+    }
+  }
+  &__addto {
+    margin-right: 15px;
+    display: inline-block;
+    position: relative;
+    .addto-show {
+      &::after {
+        background-position: -0px -55px;
+        width: 11px;
+        height: 11px;
+        top: 1px;
+      }
+      &:hover::after {
+        background-position: -11px -55px;
+      }
+      &.triggered::after {
+        background-position: -22px -55px;
+      }
+      &.disabled::after {
+        background-position: -33px -55px;
+      }
+    }
+  }
+}

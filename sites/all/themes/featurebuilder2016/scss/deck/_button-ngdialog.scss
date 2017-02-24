@@ -1,0 +1,10 @@
+.ngdialog {
+  button.disabled, button[disabled], .button.disabled, .button[disabled] {
+    background-color: #d4dde0;
+    border-color: #d4dde0;
+    color: #ffffff;
+    cursor: default;
+    opacity: 1;
+    box-shadow: none;
+  }
+}

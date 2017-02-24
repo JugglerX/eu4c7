@@ -1,0 +1,120 @@
+#search-pager {
+  display: none;
+  @media #{$medium-up} {
+    display: block;
+  }
+}
+#mobile-search-pager {
+  display: block;
+  @media #{$medium-up} {
+    display: none;
+  }
+}
+#search-pager, #mobile-search-pager {
+  .pager {
+    margin-bottom: 20px;
+    border-top: solid 1px #acabab;
+    padding-top: 20px;
+    text-align: left;
+    .pager-current {
+      display: inline-block;
+      height: rem-calc(40);
+      width: rem-calc(44);
+      font-size: 1rem;
+      line-height: rem-calc(44);
+      margin-left: rem-calc(2);
+      margin-bottom: 0;
+      font-weight: 200;
+      text-transform: uppercase;
+      text-align: center;
+      transition: background 0.3s ease-in-out;
+      background: #acabab;
+      color: white;
+    }
+    .pager-item {
+      display: inline-block;
+      height: rem-calc(40);
+      width: rem-calc(44);
+      font-size: 1rem;
+      line-height: rem-calc(44);
+      margin-left: rem-calc(2);
+      margin-bottom: 0;
+      font-weight: 200;
+      text-transform: uppercase;
+      text-align: center;
+      transition: background 0.3s ease-in-out;
+      background: $button-bg-color;
+      &:hover, &:focus {
+        background: $button-bg-hover;
+      }
+      a {
+        display: block;
+        color: white;
+      }
+    }
+    .pager-elipsis {
+      display: none;
+    }
+    .pager-first {
+      display: none;
+    }
+    .pager-previous {
+      display: inline-block;
+      height: rem-calc(40);
+      width: rem-calc(16);
+      margin-left: rem-calc(2);
+      margin-bottom: 0;
+      text-align: center;
+      a {
+        font-size: 0;
+        &:before {
+          font: normal normal normal 16px/40px FontAwesome;
+          content: "\f053";
+        }
+      }
+    }
+    .pager-next {
+      display: inline-block;
+      height: rem-calc(40);
+      width: rem-calc(16);
+      margin-left: rem-calc(2);
+      margin-bottom: 0;
+      text-align: center;
+      a {
+        font-size: 0;
+        &:before {
+          font: normal normal normal 16px/40px FontAwesome;
+          content: "\f054";
+        }
+      }
+    }
+    .pager-last {
+      display: none;
+    }
+  }
+}
+#mobile-search-pager {
+  .pager {
+    .pager-current {
+
+    }
+    .pager-item {
+
+    }
+    .pager-elipsis {
+
+    }
+    .pager-first {
+
+    }
+    .pager-previous {
+
+    }
+    .pager-next {
+
+    }
+    .pager-last {
+
+    }
+  }
+}

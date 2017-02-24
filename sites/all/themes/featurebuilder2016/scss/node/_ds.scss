@@ -1,0 +1,30 @@
+// .ds-inner {
+// 	@include grid-row(nest);
+// 	.group-left {
+// 		@include grid-column(6);
+// 	}
+// 	.group-right {
+// 		@include grid-column(6);
+// 	} 
+// 	.group-top {
+// 		@include grid-column(12)
+// 	}
+// 	.group-header {
+// 		@include grid-column(12)
+// 	}
+// 	.group-bottom {
+// 		@include grid-column(12);
+// 	}
+// 	.group-middle {
+// 		@include grid-column(12);
+// 	}
+// } 
+.ds-inner {
+	@include clearfix();
+	width: 100%;
+	.group {
+		@include clearfix();
+	}
+}
+
+    

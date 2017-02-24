@@ -1,0 +1,70 @@
+.marketing {
+  .hero {
+    margin-bottom: 0px;
+  }
+  .strip {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .button {
+      margin: 0;
+    }
+    &.strip-grey {
+      background-color: #434343;
+      h2, p {
+        color: #ffffff;
+      }
+    }
+    &.strip-white {
+      background-color: #ffffff;
+      h2, p {
+        color: #333333;
+      }
+    }
+    &.strip-black {
+      background-color: #000000;
+      h2, p {
+        color: #ffffff;
+      }
+    }
+    &.strip-white-gradient {
+      background-image: url(../images/standard/screencast-marketing-video-section-pattern.png), linear-gradient(to top, #ffffff 0%, #e2e2e2 100%);
+      background-position: right bottom, center;
+      background-repeat: no-repeat, repeat;
+      h2, p {
+        color: #333333;
+      }
+    }
+    &.strip-grey-gradient {
+      background-image: url(../images/standard/black-triangle-pattern.png), linear-gradient(to top, #434343 0%, #282828 100%);
+      background-position: bottom right;
+      background-repeat: no-repeat;
+      h2, p {
+        color: #ffffff;
+      }
+    }
+  }
+}
+.button-marketing {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 200;
+  text-align: left;
+  padding: 0;
+  background: none;
+  color: $primary-color;
+  padding-left: 28px;
+  &:before {
+    position: absolute;
+    content: "\f105";
+    width: 20px;
+    top: 50%;
+    left: 0;
+    color: $primary-color;
+    display: inline-block;
+    font: normal normal normal 14px/1 'FontAwesome';
+    vertical-align: middle;
+    font-size: rem-calc(23);
+    line-height: 1;
+    transform: translateY(-50%);
+  }
+}

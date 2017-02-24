@@ -1,0 +1,147 @@
+$slide-gap: rem-calc(15);
+
+.featured-contributions-card {
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.23);
+  margin: 0 $slide-gap;
+  width: 290px;
+  &:focus {
+    outline: 0;
+  }
+  .header {
+    padding: rem-calc(10) rem-calc(12) 0;
+    height: rem-calc(60);
+    overflow: hidden;
+    h3 {
+      font-size: rem-calc(22);
+      font-weight: 200;
+      line-height: 1;
+      color: #327084;
+      margin: 0;
+    }
+  }
+  .dateline {
+    padding: 0 rem-calc(12);
+    height: rem-calc(25);
+    overflow: hidden;
+    h5 {
+      font-size: rem-calc(13);
+      margin: 0;
+    }
+  }
+  .copy-small {
+    padding: 0 rem-calc(12);
+    height: rem-calc(35);
+    overflow: hidden;
+    p {
+      font-size: rem-calc(13);
+      margin-bottom: 0;
+      line-height: 1.3;
+      font-weight: 200;
+    }
+  }
+  .copy-large {
+    padding: 0 rem-calc(12);
+    height: rem-calc(217);
+    overflow: hidden;
+    p {
+      font-size: rem-calc(13);
+      margin-bottom: rem-calc(25);
+      line-height: 1.3;
+      font-weight: 200;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .media {
+    height: rem-calc(185);
+    overflow: hidden;
+    img {
+      min-width: 100%;
+    }
+    + .author {
+      border-top: 0;
+    }
+  }
+  .link {
+    padding: rem-calc(8) rem-calc(12) 0;
+    height: rem-calc(57);
+    overflow: hidden;
+    a {
+      font-size: rem-calc(13);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    p {
+      font-size: rem-calc(13);
+      margin: 0;
+      font-weight: 200;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .author {
+    border-top: rem-calc(1) solid rgb(237, 237, 237);
+    padding: rem-calc(8) rem-calc(12) 0;
+    height: rem-calc(57);
+    overflow: hidden;
+    img {
+      float: left;
+    }
+    h5 {
+      font-size: rem-calc(13);
+      margin: 0;
+      line-height: 1.1;
+      margin-left: rem-calc(50);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    p {
+      font-size: rem-calc(13);
+      margin: 0;
+      line-height: 1.1;
+      margin-left: rem-calc(50);
+      font-weight: 200;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .footer {
+    background-color: rgb(237, 237, 237);
+    padding: rem-calc(8) rem-calc(12) 0;
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    p {
+      font-weight: 200;
+      font-size: rem-calc(13);
+      line-height: 22px;
+      width: 77%;
+      float: left;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    span {
+      margin: 0;
+      display: inline;
+      float: right;
+      line-height: 1;
+      font-size: rem-calc(13);
+      &:before {
+        content: url($icon-thumbs-up);
+        height: 14px;
+        width: 14px;
+        margin-right: 4px;
+      }
+    }
+  }
+}

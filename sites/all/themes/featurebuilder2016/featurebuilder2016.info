@@ -1,0 +1,33 @@
+name = featurebuilder2016
+description = Feature Builder 2016
+package = Core
+version = VERSION
+core = 7.x
+
+stylesheets[all][] = css/style.css
+
+scripts[] = js/libs.min.js
+scripts[] = js/app.min.js
+
+regions[top] = Top
+regions[header] = Header
+regions[subheader] = Subheader
+regions[help] = Help
+regions[featured] = Featured
+regions[featured_fullwidth] = Featured Fullwidth
+regions[above_content] = Above Content
+regions[sidebar_first] = Sidebar First
+regions[content] = Content
+regions[sidebar_second] = Sidebar Second
+regions[below_content] = Below Content
+regions[canyon] = Canyon
+regions[canyon_fullwidth] = Canyon Fullwidth
+regions[footer] = Footer
+regions[subfooter] = Subfooter
+
+settings[shortcut_module_link] = 0
+
+
+
+
+

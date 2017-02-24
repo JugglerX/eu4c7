@@ -1,0 +1,8 @@
+.spinner-overlay {
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-indent: -9999px;
+  background: rgba(255, 255, 255, 0.8) url(../images/standard/ajax-loader.gif) center center/50px 50px no-repeat;
+  margin: auto;
+}

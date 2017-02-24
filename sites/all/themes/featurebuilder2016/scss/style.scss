@@ -1,0 +1,92 @@
+@import "reset";
+@import "settings";
+
+@import "grid/breakpoints";
+@import "grid/grid";
+
+@import "mixins";
+
+// Base
+@import 'base/type';
+@import 'base/buttons';
+@import 'base/form-input';
+@import 'base/form-input-submit';
+@import 'base/form-input-file';
+@import 'base/form-label';
+@import 'base/form-select';
+@import 'base/form-textarea';
+@import 'base/form-checkbox';
+@import 'base/form-fieldset';
+@import "base/tables";
+
+
+
+
+@import "deck/white-box";
+@import "deck/card";
+
+// Layout
+@import "layout/layout";
+@import "layout/layout-header";
+@import "layout/views";
+
+// Blocks 
+@import "blocks/block-blockify-logo";
+@import "blocks/block-va-social";
+@import "blocks/block-views-contact";
+@import "blocks/block-menu-block";
+@import "blocks/block-views-homepage-slider";
+@import "blocks/block-views-hero-slideshow";
+@import "blocks/block-views-services-block-1";
+@import "blocks/block-views-scores-block-2";
+@import "blocks/block-views-high-scores-block";
+
+// Node
+@import "node/node-score-view-mode-full";
+@import "node/node-score-view-mode-teaser";
+@import "node/taxonomy-view-mode-teaser.scss";
+@import "node/taxonomy-view-mode-full.scss";
+@import "node/ds";
+@import "node/path-submit-score";
+@import "node/path-challenges";
+@import "node/path-eu4-challenges";
+
+// Views
+@import "node/view-scores";
+@import "node/view-challenges";
+
+// Font
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,700|Roboto:400,700);
+
+// Modules
+@import "modules/pattern";
+@import "modules/menu-responsive-mean-menu";
+@import "modules/owlcarousel";
+
+// Body
+body {
+   margin: 0;
+   padding: 0;
+   color: #333;
+   font-family: $base-font;
+   font-size: $base-font-size;
+   line-height: $base-line-height;
+}
+
+body {
+   @include display-breakpoint;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+a {
+   color: $primary-color;
+   text-decoration: none;
+   &:hover {
+      text-decoration: underline;
+   }
+}
+
+

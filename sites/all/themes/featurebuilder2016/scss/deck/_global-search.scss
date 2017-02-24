@@ -1,0 +1,213 @@
+.tab-bar {
+  .search-container {
+    position: relative;
+    top: $tabbar-height;
+    right: 0;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    background-color: white;
+    float: left;
+    width: 100%;
+    height:inherit;
+    @media screen and (min-width: $header-breakpoint-large) {
+      display: block !important;
+      position: absolute;
+      top: inherit;
+      right: 0px;
+      box-shadow: none;
+      width: auto;
+      form {
+        float: left;
+      }
+    }
+    &.fixed {
+      top: $tabbar-height;
+      left: auto;
+      right: 0;
+      width: auto;
+      @media #{$small-only} {
+        left: $tabbar-menu-icon-width * -1;
+      }
+    }
+
+  }
+  #search-product-dropdown {
+    float: left;
+    height: $tabbar-height;
+    width: rem-calc(135);
+    input[type="search"] {
+      height: auto;
+      font-size: 14px;
+      line-height: 32px;
+    }
+    option {
+      font-size: 14px;
+      line-height: 32px;
+      font-family: $font-family-sans-serif;
+      color: #000000;
+      font-weight: 400;
+      margin: 0;
+      padding: 4px 15px;
+      &.active {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+    .selectize-input {
+      height: $tabbar-height;
+      font-family: $font-family-sans-serif;
+      font-size: 14px;
+      line-height: 32px;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      background-image: none;
+      background-color: white;
+      color: #a2a2a2;
+      font-weight: 400;
+      margin: 0;
+      padding: 12px 8px;
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      .ui-select-match {
+        width: rem-calc(105);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      &:after {
+        right: 5px;
+      }
+    }
+
+    .selectize-dropdown {
+      border-top: 1px solid #eaeaea;
+      top: 58px;
+      width: rem-calc(270);
+      max-height: 380px;
+      .selectize-dropdown-content {
+        max-height: 380px;
+        div[role="option"] {
+          .option {
+            color: #000000;
+            width: 100%;
+            float: left;
+            text-align: left;
+          }
+          &.active {
+            .option {
+              color: white;
+              background-color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  $line-gap: 0.72rem;
+  .search-toggle {
+    @media screen and (min-width: $header-breakpoint-large) {
+      display: none;
+    }
+  }
+  .search-label-text {
+    display: none;
+  }
+  .form-item {
+    margin: 0;
+    float: left;
+  }
+
+  .form-submit {
+    width: $tabbar-menu-icon-width;
+    height: $tabbar-menu-icon-height;
+    padding: $tabbar-menu-icon-padding;
+    color: $tabbar-menu-icon-color;
+
+    transform: translate3d(0, 0, 0);
+    background: rgba(50, 112, 132, 1);
+    text-align: center;
+    font-size: 0;
+    font: normal normal normal 0/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    position: absolute;
+    right: 0px;
+
+    &:before {
+      content: "\f002";
+      font-size: rem-calc(24);
+    }
+
+    @media screen and (min-width: $header-breakpoint-medium) {
+      position: relative;
+      float: right;
+    }
+
+  }
+
+  .form-item-search {
+    height: $tabbar-height;
+    background-color: white;
+    .search-widget {
+      margin: 0;
+      border: 0;
+      box-shadow: none;
+      width: auto;
+      height: $tabbar-height - (2 * $line-gap);
+      margin: $line-gap 0px;
+      border-left: 2px solid #c2c2c2;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    @media screen and (max-width: 1026px) {
+      position: absolute;
+      left: 145px;
+    }
+  }
+
+  .search-product-dropdown-regular {
+    background: url('../images/standard/product_selector_arrow.png') no-repeat right center;
+    z-index: 2;
+    margin-right: 5px;
+    position: absolute;
+    height: 57px;
+    width: 135px;
+    .viewport {
+      position: absolute;
+      height: 57px;
+      width: 135px;
+      font-size: 14px;
+      padding-left: 10px;
+      padding-right: 20px;
+      color: #a2a2a2;
+      overflow: hidden;
+      white-space: nowrap;
+      -ms-text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+    }
+    select {
+      position: absolute;
+      height: 57px;
+      width: 135px;
+      margin-bottom: 0;
+      border: none;
+      background: none;
+      color: transparent;
+      z-index: 2;
+      padding: 0;
+      option {
+        color: #000000;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.taxonomy-term.view-mode-taxonomy_teaser {
+	@include grid-column(4);
+ 	@media #{$medium-only} {
+		@include grid-column(6);
+	}
+	@media #{$small-only} {
+		@include grid-column(12);
+		
+	}
+	.ds-inner {
+		@include whitebox();
+		padding: 10px;
+		min-height: 172px;
+		@media #{$small-only} {
+			min-height: auto;
+		}
+		.group-left {
+			padding: 0;
+			float: left;
+			width: 100px;
+		}
+		.group-right {
+			padding: 0;
+			float: left;
+			width: calc(100% - 100px);
+		}
+		margin-right: -4px;
+		border-radius: 5px;
+		border-width: 3px;
+		border-color: rgb(212,175,55);
+		border-style: double;
+		padding: 20px;
+		display: inline-block;
+		background-repeat: repeat;
+		background-image: url("../images/concrete_wall.jpg");
+		color: white;
+		.ds-inner-two {
+			@include clearfix();
+			
+		}
+	}
+	.field-name-field-challenge-icon {
+		float: left;
+		height: auto;
+		border-radius: 2px;
+		box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+		padding: 10px;
+	}
+	.field-name-title {
+		float: left;
+		h2 {
+			margin-bottom: 10px;
+			font-size: 18px;
+		}
+	}
+	.field-name-field-subtitle {
+		clear: both; 
+		float: left;
+		-webkit-font-smoothing: antialiased;
+	}
+}

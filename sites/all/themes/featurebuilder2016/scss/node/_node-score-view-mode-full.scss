@@ -1,0 +1,255 @@
+.node-score {
+	.groups {
+		@include grid-row(nest);
+		.group-header {
+			@include grid-column(12)
+			margin-bottom: 30px;
+		}
+		.group-left {
+			@include grid-column(6);
+			@media #{$small-only} {
+				@include grid-column(12);
+			}
+		}
+		.group-right {
+			@include grid-column(6);
+			@media #{$small-only} {
+				@include grid-column(12);
+			}
+			h3 {
+				@extend .h2;
+			}
+		} 
+		.group-footer {
+			@include grid-column(12);
+			h3 {
+				@extend .h2;
+			}
+		}
+		.group-middle {
+			@include grid-column(12);
+			h3 {
+				@extend .h2;
+			}
+		}
+	}
+} 
+
+.node-score.view-mode-full  {  
+	.field-name-field-challenge-reference {
+		float: right;
+    	padding: 20px;
+    	border: 1px solid #CCC;
+    	width: 300px;
+	}
+	.group-rank-and-score {
+		border: 1px solid #CCC;
+		padding: 20px;
+		float: left;
+	}
+	.field-name-title {
+		h2 {
+			color: #666;
+			font-family: $base-font;
+			font-size: 14px;
+			font-weight: 600;
+		}
+	}
+	.field-name-field-battle-report {
+		.field-label {
+			@extend .h2;
+		}
+	}
+	.group-images {
+		@include grid-row(nest);
+		margin-top: 20px;
+		h3 {
+			@include grid-column(12);
+		}
+	}
+	.field-name-field-image-economy,
+	.field-name-field-image-custom-nation,
+	.field-name-field-image-final-score-screen {
+		@include grid-column(4);
+		@media #{$small-only} {
+			@include grid-column(12);
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.field-name-field-country-flag-media {
+		width: 160px;
+		margin-bottom: 20px;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+ 	.group-header {
+ 		text-align: center;
+ 	}
+	.group-author-and-date {
+		border: 1px solid #CCC;
+		padding: 20px;
+		display: inline-block;
+	}
+	.field-name-field-score-tag {
+		margin-right: -4px;
+		border-width: 3px;
+		border-color: rgb(212,175,55);
+		border-style: double;
+		padding: 20px;
+		display: inline-block;
+		background-repeat: repeat;
+		background-image: url("../images/concrete_wall.jpg");
+		color: white;
+		.field-item {
+			padding: 4px 20px;
+			box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+		}
+		@media #{$small-only} {
+			width: 50%;
+		}
+	}
+
+	.field-name-author {
+		margin-right: -4px;
+		border-width: 3px;
+		border-color: rgb(212,175,55);
+		border-style: double;
+		padding: 20px;
+		display: inline-block;
+		background-repeat: repeat;
+		background-image: url("../images/concrete_wall.jpg");
+		color: white;
+		.field-item {
+			padding: 4px 20px;
+			box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+		}
+		@media #{$small-only} {
+			width: 50%;
+		}
+	}
+
+	.field-name-post-date {
+		margin-right: -4px;
+		border-width: 3px;
+		border-color: rgb(212,175,55);
+		border-style: double;
+		padding: 20px;
+		display: inline-block;
+		background-repeat: repeat;
+		background-image: url("../images/concrete_wall.jpg");
+		color: white;
+		.field-item {
+			border-radius: 2px;
+			padding: 4px 20px;
+			box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+		}
+		@media #{$small-only} {
+			width: 50%;
+		}
+	}
+
+	.field-name-field-country {
+		margin-right: -4px;
+		border-width: 3px;
+		border-color: rgb(212,175,55);
+		border-style: double;
+		padding: 20px;
+		display: inline-block;
+		background-repeat: repeat;
+		background-image: url("../images/concrete_wall.jpg");
+		color: white;
+		.field-item {
+			border-radius: 2px;
+			padding: 4px 20px;
+			box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+		}
+		@media #{$small-only} {
+			width: 50%;
+		}
+	}
+
+	.field-name-field-patch-version {
+		margin-right: -4px;
+		border-width: 3px;
+		border-color: rgb(212,175,55);
+		border-style: double;
+		padding: 20px;
+		display: inline-block;
+		background-repeat: repeat;
+		background-image: url("../images/concrete_wall.jpg");
+		color: white;
+		.field-item {
+			border-radius: 2px;
+			padding: 4px 20px;
+			box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+		}
+		@media #{$small-only} {
+			width: 50%;
+		}
+	}
+
+	.field-name-field-score {
+		margin-right: -4px;
+		border-width: 3px;
+		border-color: rgb(212,175,55);
+		border-style: double;
+		padding: 20px;
+		display: inline-block;
+		background-repeat: repeat;
+		background-image: url("../images/concrete_wall.jpg");
+		color: white;
+		.field-item {
+			border-radius: 2px;
+			padding: 4px 20px;
+			box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+		}
+		@media #{$small-only} {
+			width: 50%;
+		}
+	}
+
+	.field-name-field-rank {
+		margin-right: -4px;
+		border-width: 3px;
+		border-color: rgb(212,175,55);
+		border-style: double;
+		padding: 20px;
+		display: inline-block;
+		background-repeat: repeat;
+		background-image: url("../images/concrete_wall.jpg");
+		color: white;
+		.field-item {
+			border-radius: 2px;
+			padding: 4px 20px;
+			box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+		}
+		@media #{$small-only} {
+			width: 50%;
+		}
+	}
+
+	.field-name-field-images {
+		@include clearfix();
+		clear: both;
+		margin-top: 20px;
+		.field-label {
+			@include grid-column(12);
+		}
+		.field-item {
+			@include grid-column(3);
+			margin-bottom: 10px;
+			@media #{$small-only} {
+				@include grid-column(12);
+			}
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}

@@ -1,0 +1,157 @@
+#main-content-pluck {
+
+  position: relative;
+  width: 100%;
+  margin-left: 0;
+
+  #reviews-create #generateCookieBtn,
+  #create-review-submit-button,
+  #create-review-cancel-button {
+    border: 0;
+    color: white;
+    min-width: inherit;
+    height: auto;
+    padding: 0.625rem;
+    font-size: 1rem;
+    border-radius: 0;
+    font-weight: 200;
+    text-transform: uppercase;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
+    background: $button-bg-color;
+    &:hover, &:focus {
+      background: $button-bg-hover;
+    }
+  }
+
+  #create-review-submit-button,
+  #create-review-cancel-button {
+    float: right;
+    min-width: 90px;
+  }
+
+  #create-review-attach-icon {
+    background: url($icon-paperclip);
+    width: 25px;
+    height: 21px;
+    margin-right: 10px;
+  }
+
+  #create-review-attach-label {
+    width: auto;
+    margin: 0;
+    margin-right: 5px;
+  }
+
+  #create-review-attach-label-desc {
+    width: auto;
+    font-size: inherit;
+  }
+
+  #generateCookieBtn {
+    margin-top: 8px;
+  }
+
+  h3.review-header-title {
+    font-weight: bold;
+  }
+}
+#main-content-pluck #review-navigation {
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  a:hover {
+    background: #d7d7d7;
+  }
+  li.active {
+    background: none;
+    > span {
+      display: block;
+      float: left;
+      font-size: 0.9em;
+      line-height: 26px;
+      margin: 0 10px 0 0;
+      padding: 2px 0 0;
+      width: 28px;
+      background: #d7d7d7;
+      border: 1px solid #b0b0b0;
+      border-radius: 3px;
+    }
+    > span.current {
+      color: #999999;
+      font-weight: bold;
+    }
+  }
+
+  a, a:link,
+  a:visited,
+  &.pager-current {
+    border: 1px solid #b0b0b0;
+    border-radius: 3px;
+    margin: 0 10px 0 0;
+    display: block;
+    width: 28px;
+    line-height: 26px;
+    float: left;
+    font-size: .9em;
+    color: #999999;
+    display: block;
+    padding: 2px 0 0 0;
+  }
+  a:hover {
+    background: #d7d7d7;
+    text-decoration: none;
+  }
+
+  li.active span.prev,
+  li.active a.page-link.prev,
+  span.prev,
+  li a.page-link.prev {
+    border-radius: 3px;
+    text-indent: -9999px;
+    width: 28px;
+    background: url(../images/standard/pager-prev.png);
+    height: 30px;
+    border: 0;
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+      background: url(../images/retina/pager-prev.png);
+      background-size: cover;
+      background: url(../images/standard/pager-prev-hover.png);
+      border: 1px solid #b0b0b0;
+      border-radius: 3px;
+    }
+
+  }
+
+  li.active span.next,
+  li.active a.page-link.next,
+  span.next,
+  span.current.next,
+  li a.page-link.next {
+    border-radius: 3px;
+    text-indent: -9999px;
+    width: 28px;
+    background: url(../images/standard/pager-next.png);
+    height: 30px;
+    border: 0;
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+      background: url(../images/retina/pager-next.png);
+      background-size: cover;
+      background: url(../images/standard/pager-next-hover.png);
+      border: 1px solid #b0b0b0;
+      border-radius: 3px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+
+.asdk-notification-wrapper {
+  width: 100%;
+  min-height: 30px;
+  background-color: #c44f0a;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  z-index: 200;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+body.not-front .asdk-notification-wrapper {
+  margin-bottom: 0;
+}
+body.front .asdk-notification-wrapper {
+  margin-bottom: -46px;
+}

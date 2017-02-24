@@ -1,0 +1,262 @@
+.more-options-open {
+  width: 26px;
+  height: 42px;
+  position: absolute;
+  z-index: 20;
+  top: 15px;
+  right: 15px;
+  color: #333333;
+  background-image: url("../images/standard/moreoptions.gif");
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  &:hover {
+    background-image: url("../images/standard/moreoptions-hover.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+.more-options-close {
+  width: 26px;
+  height: 42px;
+  position: absolute;
+  z-index: 22;
+  top: 0px;
+  right: 0px;
+  color: #333333;
+  background-image: url("../images/standard/moreoptions-hover.gif");
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+}
+.card.card-collection.card-edit {
+  .more-options-open {
+    top: 53px;
+  }
+  .more-options {
+    top: 52px;
+  }
+}
+.more-options {
+  position: absolute;
+  visibility: hidden;
+  z-index: 21;
+  top: 14px;
+  right: 14px;
+  width: 0;
+  height: 0;
+  max-height: 0;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  overflow: hidden;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  &.active {
+    visibility: visible;
+    width: 180px;
+    height: auto;
+    max-height: 600px;
+    -webkit-transition: width 300ms ease-in-out, max-height 400ms ease-in-out, visibility 300ms linear;
+    -moz-transition: width 300ms ease-in-out, max-height 400ms ease-in-out, visibility 300ms linear;
+    transition: width 300ms ease-in-out, max-height 400ms ease-in-out, visibility 300ms linear;
+  }
+  .lang-ja & {
+    width: 220px;
+  }
+  .lang-de & {
+    width: 220px;
+  }
+  .more-options-item {
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 200ms ease-in, opacity 200ms ease-in-out;
+    -webkit-transition-delay: 200ms;
+    -moz-transition: visibility 200ms ease-in, opacity 200ms ease-in-out;
+    -moz-transition-delay: 200ms;
+    transition: visibility 200ms ease-in, opacity 200ms ease-in-out;
+    transition-delay: 200ms;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .more-options-trigger {
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 20px;
+      padding: 10px 10px;
+      display: block;
+      width: calc(100% - 26px);
+      color: #666666;
+      &:hover {
+        color: #000000;
+      }
+    }
+    .more-options-trigger span {
+      font-size: 14px;
+      line-height: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      width: 160px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .more-options-trigger span:before {
+      background-image: url("../images/standard/toolbar_icons_sprite.png");
+      background-repeat: no-repeat;
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    .more-options-share-trigger {
+      padding-top: 13px;
+      padding-bottom: 12px;
+    }
+    .more-options-share-trigger span:before {
+      background-position: -0px -19px;
+      width: 14px;
+      height: 20px;
+    }
+    .more-options-share-trigger:hover span:before {
+      background-position: -14px -19px;
+    }
+    .more-options-report-trigger span:before {
+      background-position: -0px -39px;
+      width: 12px;
+      height: 16px;
+    }
+    .more-options-report-trigger:hover span:before {
+      background-position: -12px -39px;
+    }
+    .more-options-add-to-trigger span:before {
+      background-position: -0px -55px;
+      width: 11px;
+      height: 11px;
+    }
+    .more-options-add-to-trigger:hover span:before {
+      background-position: -11px -55px;
+    }
+  }
+}
+.more-options-share-content {
+  @include clearfix;
+  //visibility: hidden;
+  //height: 0;
+  //opacity: 0;
+  //overflow: hidden;
+  //-webkit-transition: height 200ms ease-in-out, opacity 400ms linear;
+  //-moz-transition: height 200ms ease-in-out, opacity 400ms linear;
+  //transition: height 200ms ease-in-out, opacity 400ms linear;
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+  &.active {
+    visibility: visible;
+    //height: 120px;
+    opacity: 1;
+    display: block;
+    margin: 0 0 5px 0;
+    padding: 10px 10px 5px 10px;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+  }
+  a {
+    float: left;
+    opacity: 0.85;
+    text-decoration: none;
+    width: 50%;
+    display: block;
+    color: #1858a8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .icon-dyn {
+    display: inline-block;
+    font-size: 13px;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    outline: none;
+    margin-right: 5px;
+    background-image: url("../images/standard/share-icons-18.png");
+    background-position: -0px 0;
+    background-repeat: no-repeat;
+    &.icon-dyn-facebook {
+      background-position: -0px 0;
+    }
+    &.icon-dyn-stumbleupon {
+      background-position: -18px 0;
+    }
+    &.icon-dyn-googleplus {
+      background-position: -36px 0;
+    }
+    &.icon-dyn-delicious {
+      background-position: -54px 0;
+    }
+    &.icon-dyn-tumblr {
+      background-position: -72px 0;
+    }
+    &.icon-dyn-twitter {
+      background-position: -90px 0;
+    }
+    &.icon-dyn-linkedin {
+      background-position: -108px 0;
+    }
+    &.icon-dyn-email {
+      background-position: -144px 0;
+    }
+  }
+  .icon-txt {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 23px);
+    font-size: 13px;
+    line-height: 20px;
+    height: 18px;
+  }
+}
+.more-options-report-content {
+  @include clearfix;
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+  //height: 0;
+  //overflow: hidden;
+  //-webkit-transition: height 200ms ease-in-out, opacity 400ms linear;
+  //-moz-transition: height 200ms ease-in-out, opacity 400ms linear;
+  transition: visibility 200ms ease-in-out, opacity 400ms linear;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    //height: 80px;
+    margin: 5px 0 5px 0;
+    padding: 8px 10px 10px 10px;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+  }
+  p {
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 5px;
+  }
+  .button {
+    float: left;
+    margin-bottom: 0;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    //width: 50%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    max-width: 100%;
+  }
+}

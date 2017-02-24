@@ -1,0 +1,13 @@
+// Miscellaneous useful HTML classes
+.left { float: left !important; }
+.right { float: right !important; }
+
+// Hide visually and from screen readers
+.hide {
+  display: none;
+}
+
+// Hide visually and from screen readers, but maintain layout
+.invisible { visibility: hidden; }
+
+// Get rid of gap under images by making them display: inline-block; by default

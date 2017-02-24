@@ -1,0 +1,67 @@
+.ajax-checkbox {
+  font-size: 16px;
+  line-height: 24px;
+  @include clearfix;
+  .ajax-checkbox-one {
+    float: left;
+    @media #{$small-only} {
+      width: 35px;
+    }
+  }
+  .ajax-checkbox-two {
+    float: left;
+    @media #{$small-only} {
+      width: calc(100% - 35px);
+    }
+  }
+  .ajax-checkbox-input {
+    background-image: url("../images/standard/checkbox.png");
+    width: 27px;
+    height: 27px;
+    background-position: 0 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    cursor: pointer;
+    &.checked {
+      background-position: 0 -27px;
+    }
+    &.unchecked {
+      background-position: 0 0;
+    }
+    &.processing {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  .ajax-checkbox-label {
+    color: #333333;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+    &.processing {
+      opacity: 0.5;
+    }
+  }
+  .ajax-checkbox-message {
+    display: none;
+    vertical-align: middle;
+    &.success {
+      color: #cccccc;
+    }
+    &.failure {
+      color: #e72433;
+    }
+  }
+  .ajax-checkbox-spinner {
+    display: none;
+    vertical-align: middle;
+    background-image: url("../images/standard/ajax-loader-small.gif");
+    width: 26px;
+    height: 24px;
+    background-size: 26px;
+    &.show {
+      display: inline-block;
+    }
+  }
+}

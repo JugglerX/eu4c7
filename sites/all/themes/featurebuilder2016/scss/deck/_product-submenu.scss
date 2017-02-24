@@ -1,0 +1,118 @@
+.product-submenu {
+  @media #{$small-only} {
+    display: none;
+  }
+  .product-submenu-title {
+    display: none;
+    font-size: 24px;
+    color: #666666;
+  }
+  .product-submenu-featured {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 10px;
+    @media #{$small-only}{
+      display: none;
+    }
+  }
+  .product-submenu-content {
+    @include grid-row($behavior: nest);
+    position: relative;
+  }
+  .product-submenu-curated-links-troubleshooting {
+    @include grid-column(8);
+  }
+  .product-submenu-curated-links-downloads {
+    @include grid-column(12);
+  }
+  .text-content {
+    @include grid-column(4);
+    .field-label {
+      color: #000000;
+      margin-bottom: 10px;
+      line-height: 20px;
+      font-weight: bold;
+    }
+    a {
+      display: block;
+      line-height: 20px;
+      padding-bottom: 10px;
+      font-size: 1rem;
+
+    }
+  }
+  .product-submenu-footer-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #666666;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-top: solid 1px #dadada;
+    @media #{$small-only} {
+      display: none;
+    }
+  }
+}
+.field-troubleshooting-list-wrapper {
+  @include grid-row($behavior: nest);
+  ul {
+    list-style: none;
+    margin: 0;
+    @include grid-column(6);
+    margin-bottom: 20px;
+    &:nth-of-type(2) {
+      border-right: 1px solid #dadada;
+    }
+    li {
+      line-height: 20px;
+      padding-bottom: 10px;
+    }
+  }
+}
+.field-downloads-list-wrapper {
+  @include grid-row($behavior: nest);
+  ul {
+    list-style: none;
+    margin: 0;
+    @include grid-column(4);
+    margin-bottom: 20px;
+    &:nth-of-type(2) {
+      border-right: 1px solid #dadada;
+    }
+    li {
+      line-height: 20px;
+      padding-bottom: 10px;
+      color: #000000;
+      p {
+        color: #000000;
+        margin-bottom: 0;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.field-link-list-wrapper {
+  width: 26%;
+  float: left;
+
+  a {
+    line-height: 22px;
+    display: block;
+  }
+
+  .field-label {
+    margin-bottom: 7px;
+  }
+}
+.product-footer-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #666666;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-top: solid 1px #dadada;
+  @media #{$small-only} {
+    display: none;
+  }
+}
