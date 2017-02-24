@@ -24,13 +24,13 @@
 # Logs and databases #
 ######################
 *.log
+*.sql
 
 # OS generated files #
 ######################
 .DS_Store*
 ehthumbs.db
-Icon
-
+Icon
 Thumbs.db
 ._*
 
@@ -41,7 +41,3 @@ Thumbs.db
 # SASS #
 ##########
 .sass-cache
-
-node_modules
-local.settings.php
-.idea
